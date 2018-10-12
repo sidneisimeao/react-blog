@@ -1,4 +1,5 @@
 import React from "react";
+import { FaTwitter } from "react-icons/fa";
 
 document.addEventListener('DOMContentLoaded', () => {
     // Get all "navbar-burger" elements
@@ -41,10 +42,7 @@ const Navbar = () => (
                 <div className="navbar-item">
                     <div className="buttons">
                         <a className="button is-primary">
-                            <span className="icon">
-                                <i className="fab fa-twitter"></i>
-                            </span>
-                            <span>Twitter</span>
+                            <FaTwitter />                           
                         </a>
                     </div>
                 </div>
