@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import "../../../node_modules/bulma/bulma.sass";
+@import "bulma/bulma.sass";
 
 
 $primary-color: #108db8;
@@ -34,11 +34,6 @@ body {
       display: inline-block;
     }
   }
-
-  .main-content {
-    margin-top: 40px;
-
-  }
   
   .content {
     padding: 1rem;
@@ -51,7 +46,7 @@ a {
 
 .main-content {
   padding-top: 2.5rem;
-  margin: 3%;
+  margin: 3%; 
 }
 
 .content p, .header-content, .footer, .nav-header, .input, .textarea, .nav-footer p {
@@ -81,10 +76,6 @@ a {
 
 .header-content img {
   padding-bottom: 20px;
-}
-
-.post-wrapper {
-  padding-bottom: 50px;
 }
 
 .has-padding {

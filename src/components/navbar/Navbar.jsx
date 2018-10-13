@@ -35,8 +35,8 @@ const Navbar = () => (
         <div id="navbarBasicExample" className="navbar-menu">
             <div className="navbar-start">
                 <a className="navbar-item">Blog</a>
-                <a className="navbar-item">Momento Humorístico</a>
-                <a className="navbar-item">Momento Filosófico</a>
+                <a className="navbar-item">Humorístico</a>
+                <a className="navbar-item">Filosófico</a>
             </div>
             <div className="navbar-end">
                 <div className="navbar-item">

@@ -1,13 +1,12 @@
 import React from 'react';
 import convert from 'htmr';
 
-import bulma from "images/bulma-logo.png";
+import "styles/scss/post.scss";
 
-const Post = ({ author, title, category, date, contents }) => {
+const PostResume = ({ author, title, category, date, resume }) => {
     return (
         <div className="post-wrapper">
-            <div className="header-content">
-                <img src={bulma} />
+            <div className="header-content">               
                 <h1 className="title is-4">
                     {title}
                 </h1>
@@ -16,10 +15,13 @@ const Post = ({ author, title, category, date, contents }) => {
             <a href="category.html"> {author}</a></i></small>
             </div>
             <div className="content">
-                {convert(contents)}
-            </div>            
+                {convert(resume)}
+            </div>
+            <div className="content-footer">               
+                <p><a className="button menu-label">Continuar lendo</a></p>
+            </div>
         </div>
     )
 };
 
-export default Post;
+export default PostResume;

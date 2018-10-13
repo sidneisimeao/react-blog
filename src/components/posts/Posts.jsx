@@ -1,15 +1,13 @@
 import React from 'react';
 
-import Post from 'components/posts/Post';
+import PostResume from 'components/posts/PostResume';
 
 import { Consumer } from "AppContext";
 
 const Posts = () => (
-    <div className="column is-centered is-full-mobile">
-        <Consumer>
-            {({ posts }) => posts.map(post => <Post key={post.slug} {...post } />)}
-        </Consumer>
-    </div>
+    <Consumer>
+        {({ posts }) => posts.map(post => <PostResume key={post.slug} {...post} />)}
+    </Consumer>
 );
 
 export default Posts;

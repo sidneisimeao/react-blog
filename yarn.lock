@@ -8561,9 +8561,9 @@ postcss-convert-values@^4.0.1:
     postcss-value-parser "^3.0.0"
 
 postcss-custom-media@^7.0.4:
-  version "7.0.5"
-  resolved "https://registry.yarnpkg.com/postcss-custom-media/-/postcss-custom-media-7.0.5.tgz#be16a0838ab145dd06eab0703022467b2677e68c"
-  integrity sha512-snWzHFtuUBYBRygY6R07LbXNr4/pr80+oN0yCK4ViU/Nnld3cRlzu1ztKE+9RW1x2MISaqZV5ITXeYwYCdmVBQ==
+  version "7.0.6"
+  resolved "https://registry.yarnpkg.com/postcss-custom-media/-/postcss-custom-media-7.0.6.tgz#c6b00ff7fee6ddc7dfdd946d66ed65e7743db09b"
+  integrity sha512-Txk5Ve0XWw105N6490xoq1aAHkLWIBGowBxHrLqbfsPfv/nzPvP2txyPMwn6OW87eeTO7H0a7P/BVJ4WMPEgJA==
   dependencies:
     postcss "^7.0.5"
 

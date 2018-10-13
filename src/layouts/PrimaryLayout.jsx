@@ -3,8 +3,7 @@ import React, { Fragment } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Navbar from 'components/navbar/Navbar';
-import HomePage from 'pages/HomePage';
-import AboutPage from 'pages/AboutPage';
+import Routes from "routes/";
 
 const PrimaryLayout = () => (
   <Fragment>
@@ -13,8 +12,7 @@ const PrimaryLayout = () => (
       <div className="container ">
         <div className="columns is-multiline is-mobile is-centered">
           <Switch>
-            <Route exact path='/' component={HomePage} />
-            <Route path='/about' component={AboutPage} />
+            {Routes.map((prop, key) => <Route {...prop} key={key} />)}
             <Redirect to='/' />
           </Switch>
         </div>
