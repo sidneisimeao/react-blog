@@ -14,6 +14,7 @@ const routes = [
         component: AboutPage
     },
     {
+        exact: true,
         path: "/blog",
         component: BlogPage,
         routes: [

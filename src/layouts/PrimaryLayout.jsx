@@ -3,12 +3,19 @@ import React, { Fragment } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Navbar from 'components/navbar/Navbar';
+import Routes from "routes/";
 
-import HomePage from 'pages/HomePage';
-import AboutPage from 'pages/AboutPage';
-import PostPage from 'pages/PostPage';
-import BlogPage from 'pages/BlogPage';
-
+const RouteWithSubRoutes = ({ path, component, routes, ...props }) => {
+  if (!!routes) {
+    //console.log(routes);
+    routes.map(({ path, component, ...props }) => {
+      console.log(component);
+      return <Route exact path={path} component={component} {...props} />
+    })
+  }
+  //console.log(path);
+  return <Route path={path} component={component} {...props} />
+};
 
 const PrimaryLayout = () => (
   <Fragment>
@@ -17,10 +24,10 @@ const PrimaryLayout = () => (
       <div className="container ">
         <div className="columns is-multiline is-mobile is-centered">
           <Switch>
-            <Route exact path={"/"} component={HomePage} />
-            <Route path={"/about"} component={AboutPage} />
-            <Route exact path={"/blog"} component={BlogPage} />
-            <Route path={"/blog/posts"} component={PostPage} />
+            {Routes.map((route, i) => {
+              //console.log(prop);
+              return (<RouteWithSubRoutes key={i} {...route} />)
+            })}
             <Redirect to='/' />
           </Switch>
         </div>
