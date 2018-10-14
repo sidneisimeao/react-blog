@@ -3,7 +3,7 @@ import AboutPage from 'pages/AboutPage';
 import PostPage from 'pages/PostPage';
 import BlogPage from 'pages/BlogPage';
 
-const Routes = [
+const routes = [
     {
         exact: true,
         path: "/",
@@ -17,12 +17,12 @@ const Routes = [
         path: "/blog",
         component: BlogPage,
         routes: [
-            {
-                path: "/blog/post/:id",
+            {                
+                path: "/blog/posts",
                 component: PostPage
             }
         ]
     }
 ];
 
-export default Routes;
+export default routes;

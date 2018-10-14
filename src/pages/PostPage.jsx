@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Posts from 'components/posts/Posts';
-
-export default () => (     
+const PostPage = () => (     
     <div className="column is-centered is-full-mobile">
-      <Posts />
+      kkkkkkkkkkkkkkkkkkkkkkkkkkk
     </div>   
 );
+
+export default PostPage;
