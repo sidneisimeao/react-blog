@@ -12,7 +12,7 @@ const PrimaryLayout = () => (
       <div className="container ">
         <div className="columns is-multiline is-mobile is-centered">
           <Switch>
-            {Routes.map((prop, key) => <Route {...prop} key={key} />)}
+            {Routes.map((prop, i) => <Route {...prop} key={i} />)}
             <Redirect to='/' />
           </Switch>
         </div>
