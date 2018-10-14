@@ -1,9 +1,15 @@
 import React from 'react'
 
-const PostPage = () => (     
-    <div className="column is-centered is-full-mobile">
-      kkkkkkkkkkkkkkkkkkkkkkkkkkk
-    </div>   
-);
+import { Consumer } from "AppContext";
 
-export default PostPage;
+
+export default ({ match }) => (
+  <Consumer>
+    {({ posts }) => {
+      const post = posts.filter(( post ) => post.slug === match.params.slug )
+      console.log(post);
+      //posts.filter(post => <PostResume key={post.slug} {...post} />)
+    }
+    }
+  </Consumer>
+);
