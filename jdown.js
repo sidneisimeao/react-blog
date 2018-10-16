@@ -2,5 +2,5 @@ const fs = require('fs');
 const jdown = require('jdown');
 
 jdown('content', { assets: { output: 'public' } }).then(content => {
-	fs.writeFileSync('src/posts.json', JSON.stringify(content, null, 2), 'utf8');
+	fs.writeFileSync('src/posts.json', JSON.stringify(content), 'utf8');
 });

@@ -1,32 +1,45 @@
 import React, { Component } from 'react';
+import localforage from "localforage";
 
 import PrimaryLayout from "layouts/PrimaryLayout";
 import { Provider } from "AppContext";
 
 import "styles/scss/app.scss";
 
-class App extends Component {
-
+class App extends Component {    
     state = {
+      hasError: '',
       posts:[]
-    };
+    }
 
-    async componentWillMount() {
-     
-      const storage = {
-        posts:[]
-      };
+    componentDidMount() {
+      this.hydrateStateWithLocalStorage();     
+    }
 
-      storage.posts =localStorage.getItem('posts');
+    async hydrateStateWithLocalStorage(){
+      try {
 
-      if(!!storage.posts){
-        storage.posts = JSON.parse(storage.posts);
-      }else{
-         const { posts } = await import('posts.json');
-         localStorage.setItem('posts', JSON.stringify(posts));
-         storage.posts = posts;
-      }
-      this.setState(storage);
+        const storage = {
+          posts:[]
+        };
+
+        storage.posts = await localforage.getItem('posts');
+
+        if(!storage.posts){
+          const { posts } = await import('./posts.json');
+          storage.posts = posts;
+          localforage.setItem('posts', storage.posts );
+        }
+
+        this.setState({
+          posts: storage.posts
+        });
+        
+      } catch (error) {
+        this.setState({
+          hasError: error
+        });
+      } 
     }
 
     render(){        
@@ -39,5 +52,3 @@ class App extends Component {
 }
 
 export default App;
-
-//https://hackernoon.com/how-to-take-advantage-of-local-storage-in-your-react-projects-a895f2b2d3f2
