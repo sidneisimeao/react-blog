@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-import Card from 'components/card/Card';
+//import Card from 'components/card/Card';
 import Posts from 'components/posts/Posts';
 
 export default () => (

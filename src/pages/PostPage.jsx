@@ -1,15 +1,14 @@
 import React from 'react'
+import Post from 'components/posts/Post';
+import withPosts from 'hocs/withPosts';
 
-import { Consumer } from "AppContext";
+const postBySlug = ( posts,  slug) => posts.find( post => post.slug === slug );
 
+const Posts = ({ posts,  match }) => {
+  const post = postBySlug(posts, match.params.slug );
+  return !!post ? <Post key={post.slug} {...post} /> : []    
+}
 
-export default ({ match }) => (
-  <Consumer>
-    {({ posts }) => {
-      const post = posts.filter(( post ) => post.slug === match.params.slug )
-      console.log(post);
-      //posts.filter(post => <PostResume key={post.slug} {...post} />)
-    }
-    }
-  </Consumer>
-);
+//( posts || []).filter( post => <Post key={post.slug} {...post} />)
+
+export default withPosts(Posts);

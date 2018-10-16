@@ -2,9 +2,9 @@
 import React from 'react';
 import { Consumer } from "AppContext";
 
-const withPosts = WrappedComponent => ( () =>
+const withPosts = WrappedComponent => ( props =>
     <Consumer>
-        {({ posts }) => <WrappedComponent posts={posts} />}
+        {({ posts }) => <WrappedComponent {...props} posts={posts} />}
     </Consumer>
 );
 
