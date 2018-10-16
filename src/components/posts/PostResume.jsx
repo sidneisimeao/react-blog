@@ -15,7 +15,7 @@ const PostResume = ({ author, title, category, date, resume }) => {
             <a href="category.html"> {author}</a></i></small>
             </div>
             <div className="content">
-                {convert(resume)}
+                {convert(resume || '')}
             </div>
             <div className="content-footer">               
                 <p><a className="button menu-label">Continuar lendo</a></p>
