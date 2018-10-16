@@ -1,12 +1,30 @@
 import React, { Fragment } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import Loadable from 'react-loadable';
 
 import Navbar from 'components/navbar/Navbar';
 
-import HomePage from 'pages/HomePage';
-import AboutPage from 'pages/AboutPage';
-import PostPage from 'pages/PostPage';
-import BlogPage from 'pages/BlogPage';
+const Loading = () => <div>Loading...</div>;
+
+const HomePage = Loadable({
+  loader: () => import('pages/HomePage'),
+  loading: Loading,
+});
+
+const AboutPage = Loadable({
+  loader: () => import('pages/AboutPage'),
+  loading: Loading,
+});
+
+const PostPage = Loadable({
+  loader: () => import('pages/PostPage'),
+  loading: Loading,
+});
+
+const BlogPage = Loadable({
+  loader: () => import('pages/BlogPage'),
+  loading: Loading,
+});
 
 const PrimaryLayout = () => (
   <Fragment>
