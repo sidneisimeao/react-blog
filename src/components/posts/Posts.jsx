@@ -1,13 +1,8 @@
 import React from 'react';
 
-import PostResume from 'components/posts/PostResume';
+import Resume from 'components/posts/Resume';
+import withPosts from 'hocs/withPosts';
 
-import { Consumer } from "AppContext";
+const Posts = ({ posts }) => ( posts || []).map( post => <Resume key={post.slug} {...post} />)
 
-const Posts = () => (
-    <Consumer>
-        {({ posts }) => posts.map(post => <PostResume key={post.slug} {...post} />)}
-    </Consumer>
-);
-
-export default Posts;
+export default withPosts(Posts);

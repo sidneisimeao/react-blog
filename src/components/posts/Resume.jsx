@@ -1,9 +1,10 @@
 import React from 'react';
 import convert from 'htmr';
+import { Link } from 'react-router-dom';
 
 import "styles/scss/post.scss";
 
-const PostResume = ({ author, title, category, date, resume }) => {
+const Resume = ({ author, slug, title, category, date, resume }) => {
     return (
         <div className="post-wrapper">
             <div className="header-content">               
@@ -15,13 +16,15 @@ const PostResume = ({ author, title, category, date, resume }) => {
             <a href="category.html"> {author}</a></i></small>
             </div>
             <div className="content">
-                {convert(resume)}
+                {convert(resume || '')}
             </div>
             <div className="content-footer">               
-                <p><a className="button menu-label">Continuar lendo</a></p>
+                <p>
+                <Link className="button menu-label" to={`/blog/post/${slug}`}> Continuar lendo</Link>               
+                </p>
             </div>
         </div>
     )
 };
 
-export default PostResume;
+export default Resume;

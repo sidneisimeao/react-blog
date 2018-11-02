@@ -7,7 +7,7 @@ const Post = ({ author, title, category, date, contents }) => {
     return (
         <div className="post-wrapper">
             <div className="header-content">
-                <img src={bulma} />
+                <img alt={title} src={bulma} />
                 <h1 className="title is-4">
                     {title}
                 </h1>
